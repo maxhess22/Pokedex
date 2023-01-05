@@ -1,4 +1,5 @@
 import React from 'react'
+import { Children } from 'react';
 import ReactDOM from 'react-dom/client'
 import {
   createBrowserRouter,
@@ -6,13 +7,18 @@ import {
 } from "react-router-dom";
 import './index.css'
 import Root from './routes/root';
+import Pokemon from './routes/pokemon';
 
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element:<Root/>
+    element:<Root/>,
   },
+  {
+    path:"/pokemon",
+    element: <Pokemon/>, 
+  }
 ])
 
 

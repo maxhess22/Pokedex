@@ -8,8 +8,6 @@ import axios from "axios";
 
 export default function Root(){
     let [lista, setLista] = useState([])
-    const baseURL = "https://pokeapi.co/api/v2/pokemon/";
-    
     
     React.useEffect(() => {
         
@@ -32,18 +30,17 @@ export default function Root(){
         <>
             <nav className="nav">
                 <h1>Pokedex</h1>
+                <Link to="pokemon">pokemon</Link>
             
             </nav>
             <ContenedorPokeLinks>
-                
                 {
                         lista.map((r)=>
                         <Pokelink 
-                        nombre={r.name}  
-                        key={r.id}
-                        numero={r.id}
-                       
-                        />
+                            nombre={r.name}  
+                            key={r.id}
+                            numero={r.id}
+                       />
                         )
                 } 
               
