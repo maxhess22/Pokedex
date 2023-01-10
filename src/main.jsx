@@ -1,25 +1,15 @@
 import React from 'react'
-import { Children } from 'react';
 import ReactDOM from 'react-dom/client'
 import {
-  createBrowserRouter,
-  RouterProvider,
+  BrowserRouter, Routes, Route 
 } from "react-router-dom";
 import './index.css'
 import Root from './routes/root';
 import Pokemon from './routes/pokemon';
+import ErrorPage from './routes/ErrorPage';
 
 
-const router = createBrowserRouter([
-  {
-    path: "/",
-    element:<Root/>,
-  },
-  {
-    path:"/pokemon",
-    element: <Pokemon/>, 
-  }
-])
+
 
 
 
@@ -27,6 +17,12 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <RouterProvider router={router}/>
+    <BrowserRouter>
+      <Routes>
+        <Route path='/' element={<Root/>}/>
+        <Route path='pokemon/:id' element={<Pokemon/>}/>
+      
+      </Routes>
+    </BrowserRouter>
   </React.StrictMode>,
 )

@@ -1,5 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
+:root{
+  --color-azul:steelblue;
+  --color-violeta: indigo;
+}
+
+
 
 body{
   padding: 0;
@@ -16,25 +22,42 @@ h1{
   display: flex;
   flex-direction: row-reverse;
   justify-content: start;
-  align-content: center;
-  background-color: 		steelblue;
+  align-items: center;
+  background-color: var(--color-azul);
   padding: 8px 16px;
+  gap: 16px;
+}
+.nav a{
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  color: white;
 }
 .contenedor-link{
   display: flex;
   padding: 0 8px;
-  gap: 16px;
+  flex: 1 1;
+  justify-content:space-between;
+  align-items: center;
   border-bottom: 1px outset white;
   background-color: 	#424242;
+
 }
 .contenedor-link:hover{
-  background-color: steelblue;
+  background-color: var(--color-violeta);
 }
 .contenedor-link p{
   padding: 0;
   color: white;
   font-family: 'Press Start 2P';
   font-size: medium;
+}
+.contenedor-link a {
+  color: white;
+  padding: 8px 16px;
+  border-radius: 8px; 
+  margin-left: 0;
+  background-color: var(--color-azul);
 }
 a{
   text-decoration: none;

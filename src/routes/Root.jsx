@@ -1,5 +1,5 @@
 import React,{useState} from "react";
-import { Link } from "react-router-dom";
+import { Link, Outlet } from "react-router-dom";
 import Pokelink from "./components/PokeLink";
 import ContenedorPokeLinks from "./components/pokeLinkContenedor";
 import axios from "axios";
@@ -30,21 +30,25 @@ export default function Root(){
         <>
             <nav className="nav">
                 <h1>Pokedex</h1>
-                <Link to="pokemon">pokemon</Link>
+                
             
             </nav>
             <ContenedorPokeLinks>
                 {
                         lista.map((r)=>
-                        <Pokelink 
-                            nombre={r.name}  
-                            key={r.id}
-                            numero={r.id}
-                       />
+                
+                            <Pokelink 
+                                nombre={r.name}  
+                                key={r.id}
+                                numero={r.id}
+                                to={`pokemon/${r.id}`}
+                            />
+
                         )
                 } 
               
             </ContenedorPokeLinks>
+            <Outlet/>
             
         </>
     );
